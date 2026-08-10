@@ -110,8 +110,9 @@ export function runPatternChecksInWorker(
         }
       })
     })
-    worker.once('error', (err) => {
-      settle(() => resolve({ matched: {}, timedOut: true, error: err.message }))
+    worker.once('error', (err: unknown) => {
+      const message = err instanceof Error ? err.message : String(err)
+      settle(() => resolve({ matched: {}, timedOut: true, error: message }))
     })
     worker.once('exit', (code) => {
       // 正常路径已由 message 处理 settle；此处仅未响应时可达 → 视为超时

@@ -1,5 +1,7 @@
 # dsh-tool-schema
 
+[English](README.en.md)
+
 DSH JSON Schema 验证工具插件 —— 验证数据、列出失败路径、解释 schema 约束、安全应用 default。零网络、零动态代码执行。
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
